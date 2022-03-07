@@ -9,6 +9,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "buttercms": "^1.2.8",
     "vue": "^3.2.31",
     "vue-router": "^4.0.12"
   },
