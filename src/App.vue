@@ -1,10 +1,14 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from '@/components/HelloWorld.vue'
+import NoApiKeyView from "@/views/NoApiKeyView.vue";
+
+const apiKeyExists = !!import.meta.env.VITE_APP_BUTTER_CMS_API_KEY
 </script>
 
 <template>
-  <header>
+  <NoApiKeyView v-if="!apiKeyExists"/>
+  <header v-else>
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
