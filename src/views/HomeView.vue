@@ -1,8 +1,27 @@
 <script setup lang="ts">
+import {butterCMS} from "@/utils/ButterCMS";
+import {onMounted, ref} from "vue";
+import HeroSection from "@/components/HomepageSections/HeroSection.vue";
 
+const pageData = ref(null)
+const blogPosts = ref([])
+onMounted(async () => {
+  const page = await butterCMS?.page.retrieve("landing-page", "landing-page-with-components")
+  pageData.value = page?.data.data
+
+  const posts = await butterCMS?.post.list({ page: 1, page_size: 2 })
+  blogPosts.value = posts?.data.data
+})
 </script>
 
 <template>
-<div>
+<div v-if="pageData">
+  <template v-for="(item, index) in pageData.fields.body">
+    <hero-section
+        v-if="item.type === 'hero'"
+        :key="index"
+        :fields="item.fields"
+    />
+  </template>
 </div>
 </template>
