@@ -20,6 +20,7 @@
               >Need an account?</a>
           </div>
         </div>
+
         <div class="col-xxl-6 col-xl-6 col-lg-6">
           <div class="hero-image text-center text-lg-end">
             <img :src="props.fields.image" alt=""/>
@@ -31,10 +32,5 @@
 </template>
 
 <script setup>
-
 const props = defineProps(['fields'])
 </script>
-
-<style scoped>
-
-</style>
