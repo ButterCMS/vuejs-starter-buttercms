@@ -4,6 +4,7 @@ import {onMounted, ref} from "vue";
 import HeroSection from "@/components/HomepageSections/HeroSection.vue";
 import TwoColumnWithImageSection from "@/components/HomepageSections/TwoColumnWithImageSection.vue";
 import FeaturesSection from "@/components/HomepageSections/FeaturesSection.vue";
+import TestimonialsSection from "@/components/HomepageSections/TestimonialsSection.vue";
 
 const pageData = ref(null)
 const blogPosts = ref([])
@@ -31,6 +32,11 @@ onMounted(async () => {
     />
     <features-section
         v-if="item.type === 'features'"
+        :key="index"
+        :fields="item.fields"
+    />
+    <testimonials-section
+        v-if="item.type === 'testimonials'"
         :key="index"
         :fields="item.fields"
     />

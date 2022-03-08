@@ -20,5 +20,6 @@ const {items} = useMenuItems()
 @import '@/assets/css/bootstrap.min.css';
 @import '@/assets/css/main.css';
 @import '@/assets/css/lineicons.css';
+@import '@/assets/css/tiny-slider.css';
 
 </style>

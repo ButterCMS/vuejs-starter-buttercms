@@ -9,3 +9,9 @@ export type FeatureType = {
   description: string
   icon: string
 }
+
+export type TestimonialType = {
+  quote: string
+  name: string
+  title: string
+}
