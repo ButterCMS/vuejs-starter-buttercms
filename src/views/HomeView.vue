@@ -3,6 +3,7 @@ import {butterCMS} from "@/utils/ButterCMS";
 import {onMounted, ref} from "vue";
 import HeroSection from "@/components/HomepageSections/HeroSection.vue";
 import TwoColumnWithImageSection from "@/components/HomepageSections/TwoColumnWithImageSection.vue";
+import FeaturesSection from "@/components/HomepageSections/FeaturesSection.vue";
 
 const pageData = ref(null)
 const blogPosts = ref([])
@@ -25,6 +26,11 @@ onMounted(async () => {
     />
     <two-column-with-image-section
         v-if="item.type === 'two_column_with_image'"
+        :key="index"
+        :fields="item.fields"
+    />
+    <features-section
+        v-if="item.type === 'features'"
         :key="index"
         :fields="item.fields"
     />
