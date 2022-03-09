@@ -11,9 +11,9 @@
 
             <div class="testimonial-active">
               <Testimonial
-                  v-for="(testimonial, index) in fields.testimonial"
-                  :key="index"
-                  :testimonial="testimonial"
+                v-for="(testimonial, index) in fields.testimonial"
+                :key="index"
+                :testimonial="testimonial"
               />
             </div>
           </div>
