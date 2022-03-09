@@ -4,7 +4,7 @@ import {ref} from "vue";
 import type {NavigationItem} from "@/etitities";
 import ScrollToTop from "@/components/ScrollToTop.vue";
 
-const props = defineProps<{
+defineProps<{
   menuItems: NavigationItem[]
 }>()
 

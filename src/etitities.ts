@@ -15,11 +15,3 @@ export type TestimonialType = {
   name: string;
   title: string;
 };
-
-export type BlogPost = {
-  featured_image: string;
-  featured_image_alt: string;
-  slug: string;
-  title: string;
-  summary: string;
-};

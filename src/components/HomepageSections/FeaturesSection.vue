@@ -11,10 +11,10 @@
 
         <div class="col-lg-7">
           <div class="row">
-            <Feature
-                v-for="(feature, index) in fields.features"
-                :key="index"
-                :feature="feature"
+            <feature
+              v-for="(feature, index) in fields.features"
+              :key="index"
+              :feature="feature"
             />
           </div>
         </div>

@@ -11,12 +11,12 @@
       </div>
       <div class="blog-body">
         <h5 class="package-name">
-          <RouterLink :to="`/blog/${slug}`">{{ title }}</RouterLink>
+          <router-link :to="`/blog/${slug}`">{{ title }}</router-link>
         </h5>
         <p>{{ summary }}</p>
       </div>
       <div class="blog-footer">
-        <RouterLink :to="`/blog/${slug}`" class="main-btn btn-hover">Read More</RouterLink>
+        <router-link :to="`/blog/${slug}`" class="main-btn btn-hover">Read More</router-link>
       </div>
     </div>
   </div>

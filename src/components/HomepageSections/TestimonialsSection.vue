@@ -10,7 +10,7 @@
             </div>
 
             <div class="testimonial-active">
-              <Testimonial
+              <testimonial
                 v-for="(testimonial, index) in fields.testimonial"
                 :key="index"
                 :testimonial="testimonial"
@@ -26,7 +26,7 @@
 <script setup lang="ts">
 import {defineProps, onMounted} from "vue";
 import Testimonial from "@/components/Testimonial.vue";
-import {tns} from "../../../node_modules/tiny-slider/src/tiny-slider"
+import {tns} from "tiny-slider"
 
 defineProps(['fields'])
 
