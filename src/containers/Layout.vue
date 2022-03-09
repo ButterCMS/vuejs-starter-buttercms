@@ -1,37 +1,67 @@
 <script setup lang="ts">
 import Header from "@/containers/Header.vue";
-import {onMounted, ref} from "vue";
+import {nextTick, onMounted, onUnmounted, ref} from "vue";
 import type {NavigationItem} from "@/etitities";
 import ScrollToTop from "@/components/ScrollToTop.vue";
 import Footer from "@/containers/Footer.vue";
+import {useRoute} from "vue-router";
 
 defineProps<{
   menuItems: NavigationItem[]
 }>()
 
 const activeLink = ref('')
+const route = useRoute()
 
 onMounted(() => {
-  const onScroll = () => {
-    const sections = document.querySelectorAll('.page-scroll');
-    const scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
-
-    for (let i = 0; i < sections.length; i++) {
-      const currLink = sections[i];
-      const currLinkHref = currLink.getAttribute('href');
-      const val = currLinkHref?.replace("/", "");
-      const refElement = document.querySelector(val);
-      const scrollTopMinus = scrollPos + 73;
-
-      if (refElement && refElement.offsetTop <= scrollTopMinus && (refElement.offsetTop + refElement.offsetHeight > scrollTopMinus)) {
-        activeLink.value = String(currLinkHref)
-      }
-    }
-  };
-
+  window.addEventListener('load', scrollToSection)
   window.document.addEventListener('scroll', onScroll, {passive: true});
-  return () => window.document.removeEventListener('scroll', onScroll);
 })
+
+onUnmounted(() => {
+  window.removeEventListener('load', scrollToSection)
+  window.document.removeEventListener('scroll', onScroll)
+})
+
+const onScroll = () => {
+  const sections = document.querySelectorAll('.page-scroll');
+  const scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+
+  for (let i = 0; i < sections.length; i++) {
+    const currLink = sections[i];
+    const currLinkHref = currLink.getAttribute('href');
+    const val = currLinkHref?.replace("/", "");
+    const refElement = document.querySelector(String(val));
+    const scrollTopMinus = scrollPos + 73;
+
+    if (refElement && refElement.offsetTop <= scrollTopMinus && (refElement.offsetTop + refElement.offsetHeight > scrollTopMinus)) {
+      activeLink.value = String(currLinkHref)
+    }
+  }
+};
+
+const scrollToSection = async () => {
+  await nextTick()
+  if (route.hash) {
+    const elementToScrollId = route.hash.slice(1)
+    let elem = document.getElementById(elementToScrollId)
+    if (elem) elem.scrollIntoView({behavior: "smooth"});
+  } else {
+    window.scrollTo({top: 0, left: 0, behavior: "smooth"})
+  }
+}
+
+
+// watch(route, () => {
+//   if (route.hash) {
+//     console.log(route.hash.slice(1))
+//     let elem = document.getElementById('tryit')
+//     console.log(elem)
+//     if (elem) elem.scrollIntoView({ behavior: "smooth" });
+//   } else {
+//     window.scrollTo({ top: 0, left: 0, behavior: "smooth" })
+//   }
+// })
 </script>
 
 <template>
