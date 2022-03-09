@@ -1,0 +1,66 @@
+<template>
+  <section class="blog-posts">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-8 blog-roll-cards">
+          <div class="row">
+            <zero-data v-if="blogPosts.length === 0"/>
+            <div
+              v-else
+              v-for="post in blogPosts"
+              :key="post.slug"
+              class="col-12 col-lg-6"
+            >
+              <div class="blog-roll-card">
+                <div class="blog-roll-card-meta">
+                  <h2 class="blog-roll-card-header">
+                    <router-link :to="`/blog/${post.slug}`">{{ post.title }}</router-link>
+                  </h2>
+                  <ul class="blog-roll-card-meta-info">
+                    <li>
+                      <a href="#"><img src={post.author.profile_image || placeholder} alt="#"/>
+                        {{ post.author.first_name }} {{ post.author.last_name }}
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="lni lni-calendar"></i> {{ new Date(post.published).toLocaleString() }}</a>
+                    </li>
+                    <li>
+                      <router-link v-for="tag in post.tags" :key="tag.slug" :to="`/blog/tag/${tag.slug}`">
+                        <i class="lni lni-tag"></i> {{ tag.name }}
+                      </router-link>
+                    </li>
+                  </ul>
+                </div>
+                <div class="single-post-thumbnail" v-if="post.featured_image">
+                  <img :src="post.featured_image" :alt="post.featured_image_alt"/>
+                </div>
+                <div class="blog-roll-card-body">
+                  <p>{{ post.summary }}</p>
+                </div>
+                <div class="blog-roll-card-footer text-center">
+                  <router-link :to="`/blog/${post.slug}`" class="main-btn btn-hover">Read More</router-link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="col-12 col-lg-4">
+          <blog-widget :categories="categories"/>
+        </aside>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script setup>
+import ZeroData from "../ZeroData.vue";
+import BlogWidget from "./BlogWidget.vue";
+
+defineProps(['blogPosts'])
+</script>
+
+<style scoped>
+
+</style>
