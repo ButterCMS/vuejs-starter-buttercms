@@ -50,18 +50,6 @@ const scrollToSection = async () => {
     window.scrollTo({top: 0, left: 0, behavior: "smooth"})
   }
 }
-
-
-// watch(route, () => {
-//   if (route.hash) {
-//     console.log(route.hash.slice(1))
-//     let elem = document.getElementById('tryit')
-//     console.log(elem)
-//     if (elem) elem.scrollIntoView({ behavior: "smooth" });
-//   } else {
-//     window.scrollTo({ top: 0, left: 0, behavior: "smooth" })
-//   }
-// })
 </script>
 
 <template>
