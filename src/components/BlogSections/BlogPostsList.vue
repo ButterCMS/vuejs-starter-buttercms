@@ -18,7 +18,7 @@
                   </h2>
                   <ul class="blog-roll-card-meta-info">
                     <li>
-                      <a href="#"><img src={post.author.profile_image || placeholder} alt="#"/>
+                      <a href="#"><img :src="post.author.profile_image || placeholder" alt="#"/>
                         {{ post.author.first_name }} {{ post.author.last_name }}
                       </a>
                     </li>
@@ -58,7 +58,7 @@
 import ZeroData from "../ZeroData.vue";
 import BlogWidget from "./BlogWidget.vue";
 
-defineProps(['blogPosts'])
+defineProps(["blogPosts", "categories"]);
 </script>
 
 <style scoped>

@@ -70,7 +70,7 @@ onMounted(() => {
                       <a
                         class="nav-link page-scroll"
                         :class="{ active: activeLink === menuItem.url }"
-                        :href="menuItem.url"
+                        :href="'/' + menuItem.url"
                         @click="isTogglerActive = false">{{ menuItem.label }}</a>
                     </li>
                   </ul>
