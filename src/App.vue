@@ -1,16 +1,19 @@
 <script setup lang="ts">
 import NoApiKeyView from "@/views/NoApiKeyView.vue";
 import Layout from "@/containers/Layout.vue";
-import {useMenuItems} from "@/utils/hooks";
+import {useApiError, useMenuItems} from "@/utils/hooks";
+import ApiTokenNotFound from "@/components/ApiTokenNotFound.vue";
 
 const apiKeyExists = !!import.meta.env.VITE_APP_BUTTER_CMS_API_KEY
 
-const {items} = useMenuItems()
+const {items, loading} = useMenuItems()
+const {error} = useApiError()
 </script>
 
 <template>
-  <NoApiKeyView v-if="!apiKeyExists"/>
-  <Layout :menu-items="items" v-else>
+  <no-api-key-view v-if="!apiKeyExists"/>
+  <api-token-not-found v-else-if="error"/>
+  <Layout :menu-items="items" v-else-if="!loading">
     <RouterView/>
   </Layout>
 

@@ -1,11 +1,9 @@
 <script setup>
 import Header from "@/containers/Header.vue";
 import {nextTick, onMounted, onUnmounted, ref} from "vue";
-import {useApiError} from "@/utils/hooks"
 import ScrollToTop from "@/components/ScrollToTop.vue";
 import Footer from "@/containers/Footer.vue";
 import {useRoute} from "vue-router";
-import ApiTokenNotFound from "@/components/ApiTokenNotFound.vue";
 
 defineProps(['menuItems'])
 
@@ -49,24 +47,11 @@ const scrollToSection = async () => {
     window.scrollTo({top: 0, left: 0, behavior: "smooth"})
   }
 }
-
-const {error} = useApiError()
-// watch(apiError, () => {
-//   console.log("Api error changed")
-// })
 </script>
 
 <template>
-  <api-token-not-found v-if="error"/>
-  <template v-else>
-    <Header :menu-items="menuItems" :active-link="activeLink" />
-    <slot />
-    <ScrollToTop/>
-    <Footer :menu-items="menuItems" :active-link="activeLink"/>
-  </template>
+  <Header :menu-items="menuItems" :active-link="activeLink" />
+  <slot />
+  <ScrollToTop/>
+  <Footer :menu-items="menuItems" :active-link="activeLink"/>
 </template>
-
-
-<style scoped>
-
-</style>

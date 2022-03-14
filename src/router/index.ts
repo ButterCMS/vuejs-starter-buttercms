@@ -12,6 +12,11 @@ const router = createRouter({
       component: HomeView,
     },
     {
+      path: "/landing-page/:slug",
+      name: "landing-page",
+      component: HomeView,
+    },
+    {
       path: "/blog",
       name: "blog",
       // route level code-splitting
