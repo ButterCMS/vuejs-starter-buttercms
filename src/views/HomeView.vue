@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import {butterCMS} from "@/utils/ButterCMS";
 import {onMounted, ref} from "vue";
 import HeroSection from "@/components/HomepageSections/HeroSection.vue";
@@ -6,18 +6,23 @@ import TwoColumnWithImageSection from "@/components/HomepageSections/TwoColumnWi
 import FeaturesSection from "@/components/HomepageSections/FeaturesSection.vue";
 import TestimonialsSection from "@/components/HomepageSections/TestimonialsSection.vue";
 import BlogSection from "@/components/HomepageSections/BlogSection.vue";
+import {useApiError} from "@/utils/hooks";
 
+const {setError} = useApiError()
 const pageData = ref(null);
 const blogPosts = ref([]);
 onMounted(async () => {
-  const page = await butterCMS?.page.retrieve(
-    "landing-page",
-    "landing-page-with-components"
-  );
-  pageData.value = page?.data.data;
-
-  const posts = await butterCMS?.post.list({ page: 1, page_size: 2 });
-  blogPosts.value = posts?.data.data;
+  try {
+    const page = await butterCMS?.page.retrieve(
+      "landing-page",
+      "landing-page-with-components"
+    );
+    pageData.value = page?.data.data;
+    const posts = await butterCMS?.post.list({ page: 1, page_size: 2 });
+    blogPosts.value = posts?.data.data;
+  } catch (e) {
+    setError(e)
+  }
 });
 </script>
 

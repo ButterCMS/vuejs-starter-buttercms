@@ -1,5 +1,5 @@
 import { butterCMS } from "@/utils/ButterCMS";
-import { ref, watch } from "vue";
+import { reactive, ref, toRefs, watch } from "vue";
 
 export const useMenuItems = () => {
   const items = ref([]);
@@ -18,6 +18,10 @@ export const useCategories = () => {
   return { categories };
 };
 
+const state = reactive({
+  error: null,
+});
+
 export const useBlogPosts = (filter) => {
   const posts = ref([]);
   const loading = ref(true);
@@ -29,16 +33,28 @@ export const useBlogPosts = (filter) => {
           console.log(response);
           posts.value = response.data.data;
         })
+        .catch((e) => (state.error = e))
         .finally(() => {
           loading.value = false;
         });
     } else {
-      butterCMS.post.search(filter.value).then((response) => {
-        posts.value = response.data.data;
-      });
+      butterCMS.post
+        .search(filter.value)
+        .then((response) => {
+          posts.value = response.data.data;
+        })
+        .catch((e) => (state.error = e));
     }
   };
   loadPosts();
   watch(filter, () => loadPosts());
   return { posts, loading };
+};
+
+export const useApiError = () => {
+  const setError = (error) => {
+    state.error = error;
+  };
+
+  return { ...toRefs(state), setError };
 };
