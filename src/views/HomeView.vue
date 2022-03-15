@@ -7,12 +7,12 @@ import FeaturesSection from "@/components/HomepageSections/FeaturesSection.vue";
 import TestimonialsSection from "@/components/HomepageSections/TestimonialsSection.vue";
 import BlogSection from "@/components/HomepageSections/BlogSection.vue";
 import {useApiError} from "@/utils/hooks";
+import Seo from "@/components/Seo.vue";
 
 const {setError} = useApiError()
 const pageData = ref(null);
 const blogPosts = ref([]);
 
-// document.title = ""
 onMounted(async () => {
   try {
     const page = await butterCMS?.page.retrieve(
@@ -30,6 +30,7 @@ onMounted(async () => {
 
 <template>
   <div v-if="pageData">
+    <seo v-bind="pageData.fields.seo" />
     <template v-for="(item, index) in pageData.fields.body">
       <hero-section
         v-if="item.type === 'hero'"

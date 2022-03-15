@@ -1,4 +1,9 @@
 <template>
+  <seo
+    :title="article.title"
+    :description="article.meta_description"
+    :image="article.featured_image"
+  />
   <blog-header
     :heading="article.title"
     :links="basicBlogLinks"
@@ -17,6 +22,7 @@ import {butterCMS} from "@/utils/ButterCMS";
 import BlogContentContainer from "../components/BlogSections/BlogContentContainer.vue";
 import SingleArticle from "../components/BlogSections/SingleArticle.vue";
 import {basicBlogLinks} from "@/utils";
+import Seo from "@/components/Seo.vue";
 
 const article = ref({});
 const route = useRoute();
