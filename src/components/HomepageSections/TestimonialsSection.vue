@@ -23,7 +23,7 @@
   </section>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import {defineProps, onMounted} from "vue";
 import Testimonial from "@/components/Testimonial.vue";
 import {tns} from "tiny-slider"

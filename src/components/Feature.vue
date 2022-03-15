@@ -12,9 +12,8 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import {defineProps} from "vue";
-import type {FeatureType} from "@/etitities";
 
-defineProps<{feature: FeatureType}>()
+defineProps(["feature"])
 </script>

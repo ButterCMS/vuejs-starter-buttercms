@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import NoApiKeyView from "@/views/NoApiKeyView.vue";
 import Layout from "@/containers/Layout.vue";
 import {useApiError, useMenuItems} from "@/utils/hooks";

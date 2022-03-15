@@ -22,7 +22,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 defineProps([
   "featured_image",
   "featured_image_alt",

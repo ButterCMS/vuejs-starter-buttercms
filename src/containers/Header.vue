@@ -1,19 +1,16 @@
-<script setup lang="ts">
+<script setup>
 import {onMounted, ref} from "vue";
-import type {NavigationItem} from "@/etitities";
 
 const isSticky = ref(true)
 const isTogglerActive = ref(true)
-const props = defineProps<{
-  menuItems: NavigationItem[],
-  activeLink: string
-}>()
+
+const props = defineProps(["menuItems", "activeLink"])
 
 const togglToggler = () => {
   isTogglerActive.value = !isTogglerActive.value
 }
 
-const headerNavbar = ref<HTMLDivElement | null>(null)
+const headerNavbar = ref(null)
 const onScroll = () => {
   if (headerNavbar.value) {
     const sticky = headerNavbar.value.offsetTop;

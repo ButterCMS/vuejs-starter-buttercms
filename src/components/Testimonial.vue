@@ -13,10 +13,8 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import type {TestimonialType} from "@/etitities";
-
-defineProps<{testimonial: TestimonialType}>()
+<script setup>
+defineProps(["testimonial"])
 </script>
 
 <style scoped>
