@@ -1,46 +1,55 @@
-# ButterCMS starter project
+# Vue.js + ButterCMS Starter Project
 
-This template should help get you started developing with Vue 3 in Vite.
+<!-- Brackets [] are placeholders. When readme is complete, all brackets should be
+updated with the correct value and comments deleted from the file. Please number
+sections accordingly to move people through the process as cleanly as possible.-->
 
-## Recommended IDE Setup
+This Vue.js starter project fully integrates with dynamic sample content from your ButterCMS account, including main menu, pages, blog posts, categories, and tags, all with a beautiful, custom theme with already-implemented search functionality. All of the included sample content is automatically created in your account dashboard when you sign up for a free trial of ButterCMS.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.vscode-typescript-vue-plugin).
+You can view a [live demo hosted on hosting provider](link-to-demo), or you can click the button below to deploy your own copy of our starter project to the provider of your choice.
+-->
 
-## Type Support for `.vue` Imports in TS
+## 1. Installation
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
-
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
+First, clone the repo and install the dependencies by running `npm install`
+```shell
+git clone https://github.com/ButterCMS/vuejs-starter-buttercms
+cd vuejs-starter-buttercms
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### 2. Set API Token
 
-```sh
-npm run dev
+To fetch your ButterCMS content, add your API token as an environment variable.
+
+```bash
+$ echo 'VITE_APP_BUTTER_CMS_API_KEY=<Your API Token>' >> .env
 ```
 
-### Type-Check, Compile and Minify for Production
+### 3. Run local server
 
-```sh
-npm run build
+To view the app in the browser, you'll need to run the local development server:
+
+```bash
+$ npm run dev
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+Congratulations! Your starter project is now live at [http://localhost:3000/](http://localhost:3000/).
 
-```sh
-npm run lint
-```
+<!-- Note - this example below was written with Vercel; please update instructions
+to fit whatever quick deployment host was specified. Please
+used button based deployment if available; see specifications documents to 
+links to button workflows-->
+## 4. Deploy on [ host name ]
+Deploy your Vue.js app using Vercel, the creators of Next.js. With the click of a button, you'll create a copy of your starter project in your Git provider account, instantly deploy it, and institute a full content workflow connected to your ButterCMS account. Smooth.
+
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FButterCMS%2Fnextjs-starter-buttercms&env=NEXT_PUBLIC_BUTTER_CMS_API_KEY&envDescription=Your%20ButterCMS%20API%20Token&envLink=https%3A%2F%2Fbuttercms.com%2Fsettings%2F&project-name=nextjs-starter-buttercms&repo-name=nextjs-starter-buttercms&redirect-url=https%3A%2F%2Fbuttercms.com%2Fonboarding%2Fvercel-starter-deploy-callback%2F&production-deploy-hook=Deploy%20Triggered%20from%20ButterCMS&demo-title=ButterCMS%20Next.js%20Starter&demo-description=Fully%20integrated%20with%20your%20ButterCMS%20account&demo-url=https%3A%2F%2Fnextjs-starter-buttercms.vercel.app%2F&demo-image=https://cdn.buttercms.com/r0tGK8xFRti2iRKBJ0eY&repository-name=nextjs-starter-buttercms)
+
+##5. Previewing Draft Changes
+
+<!-- For Dynamic frameworks, like Django, that use the URL string query parameter for previewing
+By default, your starter project is set up to allow previewing of draft changes saved in your ButterCMS.com account. To view draft changes, add '?preview=1' to the end of any URL (e.g., http://localhost:8000/?preview=1) -->
+
+<!-- For static frameworks, like NextJS, that use an env variable to specify previewing
+By default, your starter project is set up to allow previewing of draft changes saved in your ButterCMS.com account. To disable this functionality, set the following value in your .env file: PREVIEW=false -->
