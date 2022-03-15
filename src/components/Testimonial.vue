@@ -14,9 +14,7 @@
 </template>
 
 <script setup>
-defineProps(["testimonial"])
+defineProps(["testimonial"]);
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

@@ -9,20 +9,19 @@
 </template>
 
 <script setup>
-import {onMounted, ref} from "vue";
+import { onMounted, ref } from "vue";
 
-const isVisible = ref(false)
+const isVisible = ref(false);
 onMounted(() => {
   const onScroll = (event) => {
     // show or hide the back-top-top button
-    isVisible.value = document.body.scrollTop > 50 || document.documentElement.scrollTop > 50
+    isVisible.value =
+      document.body.scrollTop > 50 || document.documentElement.scrollTop > 50;
   };
 
-  window.document.addEventListener('scroll', onScroll, { passive: true });
-  return () => window.document.removeEventListener('scroll', onScroll);
-})
+  window.document.addEventListener("scroll", onScroll, { passive: true });
+  return () => window.document.removeEventListener("scroll", onScroll);
+});
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

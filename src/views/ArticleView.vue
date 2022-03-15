@@ -15,13 +15,13 @@
 </template>
 
 <script setup>
-import {useRoute} from "vue-router";
-import {onMounted, ref} from "vue";
+import { useRoute } from "vue-router";
+import { onMounted, ref } from "vue";
 import BlogHeader from "../components/BlogSections/BlogHeader.vue";
-import {butterCMS} from "@/utils/ButterCMS";
+import { butterCMS } from "@/utils/ButterCMS";
 import BlogContentContainer from "../components/BlogSections/BlogContentContainer.vue";
 import SingleArticle from "../components/BlogSections/SingleArticle.vue";
-import {basicBlogLinks} from "@/utils";
+import { basicBlogLinks } from "@/utils";
 import Seo from "@/components/Seo.vue";
 
 const article = ref({});

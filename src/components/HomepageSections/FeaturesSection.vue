@@ -26,5 +26,5 @@
 <script setup>
 import Feature from "@/components/Feature.vue";
 
-const props = defineProps(['fields'])
+const props = defineProps(["fields"]);
 </script>

@@ -6,13 +6,22 @@
           <div class="hero-content">
             <h1>Configure your ButterCMS API Token</h1>
             <p>Please add your API token to your <i>.env</i> file.</p>
-            <a target="_blank" rel="noreferrer" href="https://buttercms.com/join/" class="main-btn btn-hover">
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://buttercms.com/join/"
+              class="main-btn btn-hover"
+            >
               Get your free API token
             </a>
           </div>
         </div>
         <div class="col-xxl-6 col-xl-6 col-lg-6">
-          <img width="300" src="https://cdn.buttercms.com/9bPtzdJ6QSWkySNjlmyR" alt="" />
+          <img
+            width="300"
+            src="https://cdn.buttercms.com/9bPtzdJ6QSWkySNjlmyR"
+            alt=""
+          />
           <div class="hero-image text-center text-lg-end"></div>
         </div>
       </div>
@@ -22,10 +31,8 @@
 
 <script>
 export default {
-  name: "NoApiKeyView"
-}
+  name: "NoApiKeyView",
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

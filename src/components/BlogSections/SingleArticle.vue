@@ -37,8 +37,8 @@
 </template>
 
 <script setup>
-import {formatTime} from "@/utils";
-import placeholder from "@/assets/images/placeholder.png"
+import { formatTime } from "@/utils";
+import placeholder from "@/assets/images/placeholder.png";
 
 defineProps(["article"]);
 </script>

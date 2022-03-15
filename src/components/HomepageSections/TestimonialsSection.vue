@@ -4,7 +4,6 @@
       <div class="row justify-content-center">
         <div class="col-xl-7 col-lg-9">
           <div class="testimonial-active-wrapper">
-
             <div class="section-title text-center">
               <h2 class="mb-20">{{ fields.headline }}</h2>
             </div>
@@ -24,16 +23,16 @@
 </template>
 
 <script setup>
-import {defineProps, onMounted} from "vue";
+import { defineProps, onMounted } from "vue";
 import Testimonial from "@/components/Testimonial.vue";
-import {tns} from "tiny-slider"
+import { tns } from "tiny-slider";
 
-defineProps(['fields'])
+defineProps(["fields"]);
 
 onMounted(() => {
   if (typeof window !== "undefined") {
     tns({
-      container: '.testimonial-active',
+      container: ".testimonial-active",
       autoplay: true,
       autoplayTimeout: 5000,
       autoplayButtonOutput: false,
@@ -49,5 +48,5 @@ onMounted(() => {
       items: 1,
     });
   }
-})
+});
 </script>

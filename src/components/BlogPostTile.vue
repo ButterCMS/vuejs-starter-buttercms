@@ -16,7 +16,9 @@
         <p>{{ summary }}</p>
       </div>
       <div class="blog-footer">
-        <router-link :to="`/blog/${slug}`" class="main-btn btn-hover">Read More</router-link>
+        <router-link :to="`/blog/${slug}`" class="main-btn btn-hover"
+          >Read More</router-link
+        >
       </div>
     </div>
   </div>
@@ -32,6 +34,4 @@ defineProps([
 ]);
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

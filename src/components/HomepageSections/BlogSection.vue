@@ -5,13 +5,12 @@
         <div class="col-lg-6 col-md-10">
           <div class="section-title text-center">
             <h2>Latest Blog Posts</h2>
-            <p>Butter also has a built in blog engine which makes it dead simple
+            <p>
+              Butter also has a built in blog engine which makes it dead simple
               to launch a new company blog.
             </p>
             <p>
-              <router-link
-                class="main-btn btn-hover mt-5"
-                to="/blog">
+              <router-link class="main-btn btn-hover mt-5" to="/blog">
                 View All Blog Posts
               </router-link>
             </p>
@@ -32,9 +31,7 @@
 <script setup>
 import BlogPostTile from "../BlogPostTile.vue";
 
-defineProps(['blogPosts'])
+defineProps(["blogPosts"]);
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

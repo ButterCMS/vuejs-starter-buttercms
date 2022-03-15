@@ -1,15 +1,11 @@
 <template>
-  <p>
-    No blog posts found matching this query.
-  </p>
+  <p>No blog posts found matching this query.</p>
 </template>
 
 <script>
 export default {
-  name: "ZeroData"
-}
+  name: "ZeroData",
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
