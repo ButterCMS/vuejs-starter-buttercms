@@ -11,7 +11,7 @@ const activeLink = ref('')
 const route = useRoute()
 
 onMounted(() => {
-  window.addEventListener('load', scrollToSection)
+  window.addEventListener("load", scrollToSection);
   window.document.addEventListener('scroll', onScroll, {passive: true});
 })
 
@@ -41,12 +41,15 @@ const scrollToSection = async () => {
   await nextTick()
   if (route.hash) {
     const elementToScrollId = route.hash.slice(1)
+    console.log(elementToScrollId)
     let elem = document.getElementById(elementToScrollId)
+    console.log(elem)
     if (elem) elem.scrollIntoView({behavior: "smooth"});
   } else {
     window.scrollTo({top: 0, left: 0, behavior: "smooth"})
   }
 }
+
 </script>
 
 <template>

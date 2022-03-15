@@ -13,10 +13,9 @@ const {error} = useApiError()
 <template>
   <no-api-key-view v-if="!apiKeyExists"/>
   <api-token-not-found v-else-if="error"/>
-  <Layout :menu-items="items" v-else-if="!loading">
+  <Layout :menu-items="items" v-else>
     <RouterView/>
   </Layout>
-
 </template>
 
 <style>

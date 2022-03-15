@@ -2,7 +2,7 @@
   <div v-show="!loading">
     <blog-header :heading="heading" :links="headerLinks" :text="headerText" />
     <blog-content-container>
-      <blog-posts-list v-if="!isArticle" :blog-posts="posts" />
+      <blog-posts-list :blog-posts="posts" />
     </blog-content-container>
   </div>
 </template>
@@ -23,7 +23,6 @@ const headerText = ref("");
 const heading = ref("");
 const filter = ref({});
 const headerLinks = ref([]);
-const isArticle = ref(false);
 
 const loadData = () => {
   headerLinks.value = basicBlogLinks;
@@ -41,6 +40,7 @@ const loadData = () => {
     filter.value = { tag_slug: slug };
     getBlogTag(slug).then((tag) => (headerText.value = "Tag: " + tag.name)).catch(e => setError(e))
   } else if ("q" in route.query) {
+    console.log("Query")
     filter.value = String(route.query["q"]);
     heading.value = "Search Results";
     headerText.value = "Search: " + route.query["q"];

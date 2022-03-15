@@ -27,7 +27,7 @@
                 :key="index"
                 class="page-scroll"
               >
-                <a :href="item.url" :class="{active: activeLink === item.url}">{{ item.label }}</a>
+                <a :href="'/' + item.url" :class="{active: activeLink === item.url}">{{ item.label }}</a>
               </li>
             </ul>
           </div>

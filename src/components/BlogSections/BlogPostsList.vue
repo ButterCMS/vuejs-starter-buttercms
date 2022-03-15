@@ -57,6 +57,7 @@
 <script setup>
 import ZeroData from "../ZeroData.vue";
 import {formatTime} from "@/utils";
+import placeholder from "@/assets/images/placeholder.png"
 
 defineProps(["blogPosts"]);
 </script>

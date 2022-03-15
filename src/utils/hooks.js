@@ -46,7 +46,10 @@ export const useBlogPosts = (filter) => {
         .then((response) => {
           posts.value = response.data.data;
         })
-        .catch((e) => (state.error = e));
+        .catch((e) => (state.error = e))
+        .finally(() => {
+          loading.value = false;
+        });
     }
   };
   loadPosts();

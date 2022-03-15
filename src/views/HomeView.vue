@@ -11,6 +11,8 @@ import {useApiError} from "@/utils/hooks";
 const {setError} = useApiError()
 const pageData = ref(null);
 const blogPosts = ref([]);
+
+// document.title = ""
 onMounted(async () => {
   try {
     const page = await butterCMS?.page.retrieve(

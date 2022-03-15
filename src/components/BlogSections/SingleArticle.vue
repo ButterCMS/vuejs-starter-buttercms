@@ -5,7 +5,7 @@
       <ul class="single-post-meta-info">
         <li v-if="article.author">
           <a href="#">
-            <img :src="article.author.profile_image" alt="#" />
+            <img :src="article.author.profile_image || placeholder" alt="#" />
             {{ article.author.first_name }} {{ article.author.last_name }}
           </a>
         </li>
@@ -38,6 +38,7 @@
 
 <script setup>
 import {formatTime} from "@/utils";
+import placeholder from "@/assets/images/placeholder.png"
 
 defineProps(["article"]);
 </script>
