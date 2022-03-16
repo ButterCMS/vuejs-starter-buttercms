@@ -36,20 +36,10 @@ $ npm run dev
 
 Congratulations! Your starter project is now live at [http://localhost:3000/](http://localhost:3000/).
 
-<!-- Note - this example below was written with Vercel; please update instructions
-to fit whatever quick deployment host was specified. Please
-used button based deployment if available; see specifications documents to 
-links to button workflows-->
 ## 4. Deploy on [ host name ]
 Deploy your Vue.js app using Vercel, the creators of Next.js. With the click of a button, you'll create a copy of your starter project in your Git provider account, instantly deploy it, and institute a full content workflow connected to your ButterCMS account. Smooth.
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FButterCMS%2Fvuejs-starter-buttercms&env=VITE_APP_BUTTER_CMS_API_KEY&envDescription=Your%20ButterCMS%20API%20token&project-name=vuejs-starter-buttercms&repo-name=vuejs-starter-buttercms&demo-title=Vue.js%20ButterCMS%20starter)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FButterCMS%2Fnextjs-starter-buttercms&env=NEXT_PUBLIC_BUTTER_CMS_API_KEY&envDescription=Your%20ButterCMS%20API%20Token&envLink=https%3A%2F%2Fbuttercms.com%2Fsettings%2F&project-name=nextjs-starter-buttercms&repo-name=nextjs-starter-buttercms&redirect-url=https%3A%2F%2Fbuttercms.com%2Fonboarding%2Fvercel-starter-deploy-callback%2F&production-deploy-hook=Deploy%20Triggered%20from%20ButterCMS&demo-title=ButterCMS%20Next.js%20Starter&demo-description=Fully%20integrated%20with%20your%20ButterCMS%20account&demo-url=https%3A%2F%2Fnextjs-starter-buttercms.vercel.app%2F&demo-image=https://cdn.buttercms.com/r0tGK8xFRti2iRKBJ0eY&repository-name=nextjs-starter-buttercms)
-
-##5. Previewing Draft Changes
-
-<!-- For Dynamic frameworks, like Django, that use the URL string query parameter for previewing
-By default, your starter project is set up to allow previewing of draft changes saved in your ButterCMS.com account. To view draft changes, add '?preview=1' to the end of any URL (e.g., http://localhost:8000/?preview=1) -->
-
-<!-- For static frameworks, like NextJS, that use an env variable to specify previewing
+## 5. Previewing Draft Changes
 By default, your starter project is set up to allow previewing of draft changes saved in your ButterCMS.com account. To disable this functionality, set the following value in your .env file: PREVIEW=false -->
