@@ -1,13 +1,8 @@
 # Vue.js + ButterCMS Starter Project
 
-<!-- Brackets [] are placeholders. When readme is complete, all brackets should be
-updated with the correct value and comments deleted from the file. Please number
-sections accordingly to move people through the process as cleanly as possible.-->
-
 This Vue.js starter project fully integrates with dynamic sample content from your ButterCMS account, including main menu, pages, blog posts, categories, and tags, all with a beautiful, custom theme with already-implemented search functionality. All of the included sample content is automatically created in your account dashboard when you sign up for a free trial of ButterCMS.
 
-You can view a [live demo hosted on hosting provider](link-to-demo), or you can click the button below to deploy your own copy of our starter project to the provider of your choice.
--->
+You can view a [live demo hosted on Vercel](https://vuejs-starter-buttercms-hh3qi8obq-applifting.vercel.app), or you can click the button below to deploy your own copy of our starter project to the provider of your choice.
 
 ## 1. Installation
 
