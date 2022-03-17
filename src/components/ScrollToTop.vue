@@ -2,7 +2,7 @@
   <a
     href="#"
     class="scroll-top btn-hover d-flex"
-    :class="{ 'd-none': isVisible }"
+    :class="{ 'd-none': !isVisible }"
   >
     <i class="lni lni-chevron-up"></i>
   </a>
@@ -14,7 +14,6 @@ import { onMounted, ref } from "vue";
 const isVisible = ref(false);
 onMounted(() => {
   const onScroll = (event) => {
-    // show or hide the back-top-top button
     isVisible.value =
       document.body.scrollTop > 50 || document.documentElement.scrollTop > 50;
   };

@@ -27,8 +27,7 @@ const onScroll = () => {
     document.documentElement.scrollTop ||
     document.body.scrollTop;
 
-  for (let i = 0; i < sections.length; i++) {
-    const currLink = sections[i];
+  for (let currLink of sections) {
     const currLinkHref = currLink.getAttribute("href");
     const val = currLinkHref?.replace("/", "");
     const refElement = document.querySelector(String(val));
@@ -48,9 +47,7 @@ const scrollToSection = async () => {
   await nextTick();
   if (route.hash) {
     const elementToScrollId = route.hash.slice(1);
-    console.log(elementToScrollId);
     let elem = document.getElementById(elementToScrollId);
-    console.log(elem);
     if (elem) elem.scrollIntoView({ behavior: "smooth" });
   } else {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
