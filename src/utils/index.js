@@ -4,7 +4,7 @@ export const basicBlogLinks = [
     text: "Home",
   },
   {
-    to: "/blog",
+    to: "/blog/",
     text: "Blog",
   },
 ];
