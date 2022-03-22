@@ -30,7 +30,7 @@ $ echo 'VITE_APP_BUTTER_CMS_API_KEY=<Your API Token>' >> .env
 To view the app in the browser, you'll need to run the local development server:
 
 ```bash
-$ npm run dev
+$ npm run start
 ```
 
 Congratulations! Your starter project is now live at [http://localhost:3000/](http://localhost:3000/).
