@@ -1,6 +1,6 @@
 {
-  "name": "buttercms-starter-project",
-  "version": "0.0.0",
+  "name": "vuejs-starter-buttercms",
+  "version": "1.0.0",
   "scripts": {
     "start": "vite",
     "build": "vite build",
