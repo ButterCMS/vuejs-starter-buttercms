@@ -10,7 +10,7 @@
               to launch a new company blog.
             </p>
             <p>
-              <router-link class="main-btn btn-hover mt-5" to="/blog">
+              <router-link class="main-btn btn-hover mt-5" to="/blog/">
                 View All Blog Posts
               </router-link>
             </p>
