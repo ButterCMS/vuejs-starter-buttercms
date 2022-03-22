@@ -1,6 +1,6 @@
-import Butter, { ButterStatic } from "buttercms";
+import Butter from "buttercms";
 
-export let butterCMS: ButterStatic | undefined = undefined;
+export let butterCMS = undefined;
 try {
   const apiKey = String(import.meta.env.VITE_APP_BUTTER_CMS_API_KEY);
   const preview = import.meta.env.VITE_APP_BUTTER_CMS_PREVIEW;
