@@ -7,6 +7,7 @@ This Vue.js starter project fully integrates with dynamic sample content from yo
 You can view a [live demo hosted on Vercel](https://vuejs-starter-buttercms-applifting.vercel.app), or you can click the button below to deploy your own copy of our starter project to the provider of your choice.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FButterCMS%2Fvuejs-starter-buttercms&env=VITE_APP_BUTTER_CMS_API_KEY&envDescription=Your%20ButterCMS%20API%20token&project-name=vuejs-starter-buttercms&repo-name=vuejs-starter-buttercms&demo-title=Vue.js%20ButterCMS%20starter)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ButterCMS/vuejs-starter-buttercms&env%5BVITE_APP_BUTTER_CMS_API_KEY%5D=check%20https://buttercms.com/settings)
 
 ## 1. Installation
 
