@@ -19,7 +19,7 @@
           <router-link
             v-for="tag in article.tags"
             :key="tag.slug"
-            :to="`/blog/tag/${tag.slug}`"
+            :to="`/blog/tag/${tag.slug}/`"
           >
             <i class="lni lni-tag"></i>
             {{ tag.name }}
