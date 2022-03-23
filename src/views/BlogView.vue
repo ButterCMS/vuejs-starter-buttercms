@@ -36,10 +36,10 @@ const loadData = () => {
     const slug = route.params.category;
     heading.value = "Blog Posts by Category";
     filter.value = { category_slug: slug };
-    seoTitle.value = "category: " + slug;
     getBlogCategory(slug)
       .then((category) => {
         headerText.value = "Category: " + category.name;
+        seoTitle.value = "Category: " + category.name;
       })
       .catch((e) => setError(e));
   } else if ("tag" in route.params) {
@@ -47,9 +47,11 @@ const loadData = () => {
     heading.value = "Blog Posts by Tag";
     filter.value = { tag_slug: slug };
     getBlogTag(slug)
-      .then((tag) => (headerText.value = "Tag: " + tag.name))
+      .then((tag) => {
+        headerText.value = "Tag: " + tag.name;
+        seoTitle.value = "Tag: " + tag.name;
+      })
       .catch((e) => setError(e));
-    seoTitle.value = "tag: " + slug;
   } else if ("q" in route.query) {
     filter.value = String(route.query["q"]);
     heading.value = "Search Results";
