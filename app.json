@@ -13,9 +13,6 @@
     "VITE_APP_BUTTER_CMS_API_KEY": {
       "description": "The API token of your ButterCMS account",
       "value": ""
-    },
-    "NODE_ENV": {
-      "value": "production"
     }
   }
 }
