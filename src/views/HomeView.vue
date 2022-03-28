@@ -8,16 +8,19 @@ import TestimonialsSection from "@/components/HomepageSections/TestimonialsSecti
 import BlogSection from "@/components/HomepageSections/BlogSection.vue";
 import { useApiError } from "@/utils/hooks";
 import Seo from "@/components/Seo.vue";
+import {useRoute} from "vue-router";
 
 const { setError } = useApiError();
 const pageData = ref(null);
 const blogPosts = ref([]);
+const route = useRoute()
 
 onMounted(async () => {
   try {
+    const pageSlug = route.params.slug ?? "landing-page-with-components";
     const page = await butterCMS?.page.retrieve(
       "landing-page",
-      "landing-page-with-components"
+      pageSlug
     );
     pageData.value = page?.data.data;
     const posts = await butterCMS?.post.list({ page: 1, page_size: 2 });
