@@ -6,10 +6,10 @@
   "keywords": ["Vue.js", "buttercms", "cms", "blog"],
   "buildpacks": [
     {
-      "url": "https://github.com/heroku/heroku-buildpack-static.git"
+      "url": "heroku/nodejs"
     },
     {
-      "url": "heroku/nodejs"
+      "url": "https://github.com/heroku/heroku-buildpack-static.git"
     }
   ],
   "env": {
