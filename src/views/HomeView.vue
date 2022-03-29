@@ -1,6 +1,6 @@
 <script setup>
 import { butterCMS } from "@/utils/ButterCMS";
-import { onMounted, ref } from "vue";
+import {inject, nextTick, onMounted, ref} from "vue";
 import HeroSection from "@/components/HomepageSections/HeroSection.vue";
 import TwoColumnWithImageSection from "@/components/HomepageSections/TwoColumnWithImageSection.vue";
 import FeaturesSection from "@/components/HomepageSections/FeaturesSection.vue";
@@ -12,6 +12,7 @@ import Seo from "@/components/Seo.vue";
 const { setError } = useApiError();
 const pageData = ref(null);
 const blogPosts = ref([]);
+const {handleMounted} = inject("layout")
 
 onMounted(async () => {
   try {
@@ -22,6 +23,8 @@ onMounted(async () => {
     pageData.value = page?.data.data;
     const posts = await butterCMS?.post.list({ page: 1, page_size: 2 });
     blogPosts.value = posts?.data.data;
+    await nextTick()
+    handleMounted()
   } catch (e) {
     setError(e);
   }
