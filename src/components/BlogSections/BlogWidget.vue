@@ -13,7 +13,7 @@
     <h5 class="widget-title">Categories</h5>
     <ul class="categories-list">
       <li v-for="category in categories" :key="category.slug">
-        <router-link :to="`/blog/category/${category.slug}`">
+        <router-link :to="`/blog/category/${category.slug}/`">
           {{ category.name }}
         </router-link>
       </li>

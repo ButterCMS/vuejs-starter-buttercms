@@ -32,6 +32,7 @@
                 v-for="tag in post.tags"
                 :key="tag.slug"
                 :to="`/blog/tag/${tag.slug}/`"
+                class="tag"
               >
                 <i class="lni lni-tag"></i> {{ tag.name }}
               </router-link>
@@ -62,4 +63,8 @@ import placeholder from "@/assets/images/placeholder.png";
 defineProps(["blogPosts"]);
 </script>
 
-<style scoped></style>
+<style scoped>
+.tag{
+  padding-right: 10px;
+}
+</style>
