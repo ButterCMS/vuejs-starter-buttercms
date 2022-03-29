@@ -5,7 +5,10 @@
         <div class="col-xl-6 col-lg-6 col-md-10">
           <div class="hero-content">
             <h1>Configure your ButterCMS API Token</h1>
-            <p>Please add your API token to your <i>.env</i> file.</p>
+            <p>
+              Please add VITE_APP_BUTTER_CMS_API_KEY to your <i>.env</i> file.
+              Set the value as your Butter API Token
+            </p>
             <a
               target="_blank"
               rel="noreferrer"
