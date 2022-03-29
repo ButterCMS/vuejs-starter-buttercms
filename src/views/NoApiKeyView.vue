@@ -7,7 +7,7 @@
             <h1>Configure your ButterCMS API Token</h1>
             <p>
               Please add VITE_APP_BUTTER_CMS_API_KEY to your <i>.env</i> file.
-              Set the value as your Butter API Token
+              Set the value as your Butter API Token.
             </p>
             <a
               target="_blank"
