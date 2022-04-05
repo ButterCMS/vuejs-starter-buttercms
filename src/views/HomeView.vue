@@ -9,9 +9,11 @@ import BlogSection from "@/components/HomepageSections/BlogSection.vue";
 import { useApiError } from "@/utils/hooks";
 import Seo from "@/components/Seo.vue";
 import {useRoute} from "vue-router";
+import Spinner from "@/components/Spinner.vue";
 
 const { setError } = useApiError();
 const pageData = ref(null);
+const loading = ref(true)
 const blogPosts = ref([]);
 const route = useRoute()
 const {handleMounted} = inject("layout")
@@ -27,6 +29,7 @@ onMounted(async () => {
     const posts = await butterCMS?.post.list({ page: 1, page_size: 2 });
     blogPosts.value = posts?.data.data;
     await nextTick()
+    loading.value = false
     handleMounted()
   } catch (e) {
     setError(e);
@@ -35,6 +38,7 @@ onMounted(async () => {
 </script>
 
 <template>
+  <spinner v-if="loading"/>
   <div v-if="pageData">
     <seo v-bind="pageData.fields.seo" />
     <template v-for="(item, index) in pageData.fields.body">
