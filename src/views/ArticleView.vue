@@ -1,4 +1,5 @@
 <template>
+  <spinner v-show="loading"/>
   <seo
     :title="article.title"
     :description="article.meta_description"
@@ -23,12 +24,15 @@ import BlogContentContainer from "../components/BlogSections/BlogContentContaine
 import SingleArticle from "../components/BlogSections/SingleArticle.vue";
 import { basicBlogLinks } from "@/utils";
 import Seo from "@/components/Seo.vue";
+import Spinner from "@/components/Spinner.vue";
 
 const article = ref({});
+const loading = ref(true)
 const route = useRoute();
 onMounted(async () => {
   const slug = route.params.article;
   const response = await butterCMS.post.retrieve(slug);
   article.value = response.data.data;
+  loading.value = false
 });
 </script>

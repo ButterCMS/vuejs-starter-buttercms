@@ -3,6 +3,7 @@ import NoApiKeyView from "@/views/NoApiKeyView.vue";
 import Layout from "@/containers/Layout.vue";
 import { useApiError, useMenuItems } from "@/utils/hooks";
 import ApiTokenNotFound from "@/components/ApiTokenNotFound.vue";
+import Spinner from "@/components/Spinner.vue";
 
 const apiKeyExists = !!import.meta.env.VITE_APP_BUTTER_CMS_API_KEY;
 
@@ -11,7 +12,8 @@ const { error } = useApiError();
 </script>
 
 <template>
-  <no-api-key-view v-if="!apiKeyExists" />
+  <spinner v-if="loading"/>
+  <no-api-key-view v-else-if="!apiKeyExists" />
   <api-token-not-found v-else-if="error" />
   <Layout :menu-items="items" v-else>
     <RouterView />

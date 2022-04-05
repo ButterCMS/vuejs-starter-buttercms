@@ -1,4 +1,5 @@
 <template>
+  <spinner v-show="loading" />
   <div v-show="!loading">
     <seo
       :title="`Sample Blog - ${seoTitle}`"
@@ -21,6 +22,7 @@ import BlogPostsList from "../components/BlogSections/BlogPostsList.vue";
 import { ref, watch } from "vue";
 import { getBlogCategory, getBlogTag } from "@/utils/service";
 import Seo from "@/components/Seo.vue";
+import Spinner from "@/components/Spinner.vue";
 
 const { setError } = useApiError();
 const route = useRoute();
