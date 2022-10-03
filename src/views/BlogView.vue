@@ -60,7 +60,7 @@ const loadData = () => {
     headerText.value = "Search: " + route.query["q"];
     seoTitle.value = `search results for ${filter.value}`;
   } else {
-    headerText.value = heading.value = "All blog posts";
+    headerText.value = heading.value = "All Blog Posts";
     headerLinks.value = [basicBlogLinks[0]];
     filter.value = {};
     seoTitle.value = `All Posts`;
