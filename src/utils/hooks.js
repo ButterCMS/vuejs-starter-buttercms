@@ -41,7 +41,7 @@ export const useBlogPosts = (filter) => {
           loading.value = false;
         });
     } else {
-      butterCMS.post
+      butterCMS?.post
         .search(filter.value)
         .then((response) => {
           posts.value = response.data.data;

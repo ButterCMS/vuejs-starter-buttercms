@@ -1,4 +1,4 @@
-![recommended node version](https://img.shields.io/badge/node-v16-green)
+![required node version](https://img.shields.io/badge/node-v20.18%2B-green)
 
 # Vue.js + ButterCMS Starter Project
 
@@ -8,6 +8,16 @@ You can view a [live demo hosted on Vercel](http://vuejs-starter-buttercms.verce
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FButterCMS%2Fvuejs-starter-buttercms&env=VITE_APP_BUTTER_CMS_API_KEY&envDescription=Your%20ButterCMS%20API%20Token&envLink=https%3A%2F%2Fbuttercms.com%2Fsettings%2F&project-name=vuejs-starter-buttercms&repo-name=vuejs-starter-buttercms&redirect-url=https%3A%2F%2Fbuttercms.com%2Fonboarding%2Fvercel-starter-deploy-callback%2F&production-deploy-hook=Deploy%20Triggered%20from%20ButterCMS&demo-title=ButterCMS%20Vue.js%20Starter%20Demo&demo-description=Fully%20integrated%20with%20your%20ButterCMS%20account&demo-url=http%3A%2F%2Fvuejs-starter-buttercms.vercel.app%2F&repository-name=vuejs-starter-buttercms&demo-image=https://cdn.buttercms.com/r0tGK8xFRti2iRKBJ0eY)
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ButterCMS/vuejs-starter-buttercms&env%5BVITE_APP_BUTTER_CMS_API_KEY%5D=check%20https://buttercms.com/settings)
+
+### System Requirements
+
+- Node.js 20.18.0 or newer
+- npm 10 or newer
+
+This project currently uses:
+- Vue.js 3.4
+- Vite 6
+- ButterCMS 3.0.0
 
 ## 1. Installation
 
