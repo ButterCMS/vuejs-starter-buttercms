@@ -8,13 +8,22 @@ const state = reactive({
 export const useMenuItems = () => {
   const items = ref([]);
   const loading = ref(true);
-  butterCMS?.content
-    .retrieve(["navigation_menu"])
-    .then((response) => {
-      items.value = response.data.data.navigation_menu[0].menu_items;
-    })
-    .catch((e) => (state.error = e))
-    .finally(() => (loading.value = false));
+
+  if (!butterCMS) {
+    // if for some reason Butter instance ahs not been initialized
+    // for example, if auth token was not provided
+    // loading should be false
+    loading.value = false;
+  } else {
+    butterCMS.content
+      .retrieve(["navigation_menu"])
+      .then((response) => {
+        items.value = response.data.data.navigation_menu[0].menu_items;
+      })
+      .catch((e) => (state.error = e))
+      .finally(() => (loading.value = false));
+  }
+
   return { items, loading };
 };
 
